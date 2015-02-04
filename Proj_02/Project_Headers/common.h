@@ -17,6 +17,7 @@
 #include "gpio.h"
 #include "support_common.h"
 #include "dp_switch.h"
+#include "button.h"
 
 #define FUNC_GPIO (0)
 #define DATA_DIR_OUT (1)
