@@ -2,7 +2,10 @@
 "./Sources/uart_support_c.obj"
 "./Sources/main_c.obj"
 "./Sources/led_c.obj"
+"./Sources/gpio_c.obj"
 "./Sources/exceptions_c.obj"
+"./Sources/dp_switch_c.obj"
+"./Sources/button_c.obj"
 "./Sources/MCF52259_sysinit_c.obj"
 -sym full
 -msgstyle parseable

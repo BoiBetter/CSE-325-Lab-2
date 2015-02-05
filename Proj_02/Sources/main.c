@@ -1,9 +1,18 @@
 #include "common.h"
-#include "support_common.h"
-
-
 #define forever for(;;)
 
-__declspec(noreturn) int main(){
-    led_all_init();
+int main(){
+    button_init(BUTTON3);
+        led_init(LED2);
+
+        forever{
+            if(get_button_state(BUTTON3)){
+                led_on(LED2);
+
+            }
+            else{
+                led_off(LED2);
+            }
+        }
+        return 0;
 }

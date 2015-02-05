@@ -1,0 +1,101 @@
+
+
+#>00001000          ___heap_size (linker command file)
+#>00001000          ___stack_size (linker command file)
+#>40000000          ___IPSBAR (linker command file)
+#>20000000          ___RAMBAR (linker command file)
+#>00010000          ___RAMBAR_SIZE (linker command file)
+#>00000000          ___FLASHBAR (linker command file)
+#>00080000          ___FLASHBAR_SIZE (linker command file)
+#>2000FFFC          ___SP_AFTER_RESET (linker command file)
+
+# .userram
+
+# .code
+
+# .vectorram
+
+# .vectors
+  20000500 00000400 .vectortable _vect	(exceptions_c.obj)
+
+# .text
+  20000900 00000008 .text   __initialize_system	(startcf_c.obj)
+  20000908 0000006C .text   __copy_rom_section	(startcf_c.obj)
+  20000974 0000005C .text   __copy_rom_sections_to_ram	(startcf_c.obj)
+  200009D0 0000022A .text   clear_mem	(startcf_c.obj)
+  20000BFA 00000096 .text   _startup	(startcf_c.obj)
+  20000C90 00000032 .text   main	(main_c.obj)
+  20000CC2 0000001E .text   led_init	(led_c.obj)
+  20000CE0 0000001A .text   led_off	(led_c.obj)
+  20000CFA 0000001A .text   led_on	(led_c.obj)
+  20000D14 00000138 .text   gpio_init	(gpio_c.obj)
+  20000E4C 00000032 .text   gpio_get_pin_state	(gpio_c.obj)
+  20000E7E 0000006E .text   gpio_set_pin_state	(gpio_c.obj)
+  20000EEC 00000004 .text   TrapHandler_printf	(exceptions_c.obj)
+  20000EF0 00000200 .text   mcf_exception_handler	(exceptions_c.obj)
+  200010F0 00000020 .text   asm_exception_handler	(exceptions_c.obj)
+  20001110 00000008 .text   mcf5xxx_wr_vbr	(exceptions_c.obj)
+  20001118 00000062 .text   initialize_exceptions	(exceptions_c.obj)
+  2000117A 0000001E .text   button_init	(button_c.obj)
+  20001198 00000026 .text   get_button_state	(button_c.obj)
+  200011BE 00000020 .text   pll_init	(MCF52259_sysinit_c.obj)
+  200011DE 00000022 .text   scm_init	(MCF52259_sysinit_c.obj)
+  20001200 0000003E .text   __initialize_hardware	(MCF52259_sysinit_c.obj)
+  2000123E 0000001C .text   __call_static_initializers	(librt.a cf_staticinitia)
+#>2000125C          ___ROM_AT (linker command file)
+#>2000125C          ___DATA_ROM (linker command file)
+
+# .data
+#>20009100          ___DATA_RAM (linker command file)
+#>20009100          __exception_table_start__ (linker command file)
+# Exception index
+  20009100 00000000         Exception Table Index	()
+#>20009100          __exception_table_end__ (linker command file)
+#>20009100          ___sinit__ (linker command file)
+# Linker generated symbols
+  20009100 00000004         static initializer	(linker generated)
+#>20009104          __START_DATA (linker command file)
+#>20009104          __END_DATA (linker command file)
+#>20009104          __START_SDATA (linker command file)
+#>20009104          __END_SDATA (linker command file)
+#>20009104          ___DATA_END (linker command file)
+#>20009104          __SDA_BASE (linker command file)
+
+# .bss
+#>20009104          ___BSS_START (linker command file)
+#>20009104          __START_SBSS (linker command file)
+#>20009104          __END_SBSS (linker command file)
+#>20009104          __START_BSS (linker command file)
+#>20009104          __END_BSS (linker command file)
+#>20009104          ___BSS_END (linker command file)
+
+# .custom
+#>20009104          ___HEAP_START (linker command file)
+#>20009104          ___heap_addr (linker command file)
+#>2000A104          ___HEAP_END (linker command file)
+#>2000A104          ___SP_END (linker command file)
+#>2000B104          ___SP_INIT (linker command file)
+#>20000000          ___VECTOR_RAM (linker command file)
+#>2000B104          __SP_INIT (linker command file)
+#>2000A104          ___mem_limit (linker command file)
+#>00000010          ___stack_safety (linker command file)
+#>20001260          _romp_at (linker command file)
+
+# .romp
+#>20001260          __S_romp (linker command file)
+
+
+# Memory map:
+  v_addr   p_addr   size     name
+  20000000 20000000 00000000 .vectorram vectorram
+  20000500 20000500 00000000 .code      code
+  20000500 20000500 00000400 .vectors   code
+  20000900 20000900 0000095C .text      code
+  20009100 20009100 00000000 .userram   userram
+  20009100 2000125C 00000004 .data      userram
+  20009104 20009104 00000000 .bss       userram
+  20009104 20009104 00000000 .custom    userram
+  20009104 20001260 00000018 .romp      userram
+
+# Link start time: Wed Feb 04 19:41:22 2015
+# Link end time: Wed Feb 04 19:41:22 2015
