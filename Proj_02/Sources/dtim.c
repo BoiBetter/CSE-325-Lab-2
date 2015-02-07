@@ -26,12 +26,10 @@
 // of the function.
 //
 // Input:
-// m is a positive integer less than 4294967.
+// m is a positive integer.
 //--------------------------------------------------------------------------------------------------------------
-void dtim0_delay_ms(int m){
-    if(m < 4294967){
+void dtim0_delay_ms(unsigned long m){
         dtim0_delay_us(m * 1000);
-    }
 }
 
 //--------------------------------------------------------------------------------------------------------------
@@ -44,10 +42,10 @@ void dtim0_delay_ms(int m){
 // Input:
 // u is a positive integer.
 //--------------------------------------------------------------------------------------------------------------
-void dtim0_delay_us(int u) {
+void dtim0_delay_us(unsigned long u) {
     MCF_DTIM0_DTER = 0x03; // Clear Events
     MCF_DTIM0_DTCN = 0x00000000; // Clear Timer Counter
-    MCF_DTIM0_DTRR = (uint32)(u-1);
+    MCF_DTIM0_DTRR = (u-1);
     MCF_DTIM0_DTMR |= 0x0001;
     while ( !(MCF_DTIM0_DTER & 0x02)) {}
 }

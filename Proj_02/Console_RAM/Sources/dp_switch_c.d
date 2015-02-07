@@ -2,9 +2,7 @@ Sources/dp_switch_c.obj: C:\Users\Hoa\workspace\Proj_02\Sources\dp_switch.c \
 	C:\Freescale\CW\ MCU\ v10.6\MCU\ColdFire_Support\ewl\EWL_C\include\lib_ewl.prefix \
 	C:\Freescale\CW\ MCU\ v10.6\MCU\ColdFire_Support\ewl\EWL_C\include\common.prefix \
 	C:\Freescale\CW\ MCU\ v10.6\MCU\ColdFire_Support\ewl\EWL_C\include\ewl_c_version.h \
-	C:\Users\Hoa\workspace\Proj_02\Project_Headers\common.h \
-	C:\Users\Hoa\workspace\Proj_02\Project_Headers\led.h \
-	C:\Users\Hoa\workspace\Proj_02\Project_Headers\gpio.h \
+	C:\Users\Hoa\workspace\Proj_02\Project_Headers\dp_switch.h \
 	C:\Users\Hoa\workspace\Proj_02\Project_Headers\support_common.h \
 	C:\Freescale\CW\ MCU\ v10.6\MCU\ColdFire_Support\(headers)\MCF52259\MCF52259.h \
 	C:\Freescale\CW\ MCU\ v10.6\MCU\ColdFire_Support\(headers)\MCF52259\MCF52259_SCM.h \
@@ -34,6 +32,4 @@ Sources/dp_switch_c.obj: C:\Users\Hoa\workspace\Proj_02\Sources\dp_switch.c \
 	C:\Freescale\CW\ MCU\ v10.6\MCU\ColdFire_Support\(headers)\MCF52259\MCF52259_USB_OTG.h \
 	C:\Freescale\CW\ MCU\ v10.6\MCU\ColdFire_Support\(headers)\MCF52259\MCF52259_CFM.h \
 	C:\Freescale\CW\ MCU\ v10.6\MCU\ColdFire_Support\(headers)\MCF52259\MCF52259_RNGA.h \
-	C:\Users\Hoa\workspace\Proj_02\Project_Headers\MCF52259_sysinit.h \
-	C:\Users\Hoa\workspace\Proj_02\Project_Headers\dp_switch.h \
-	C:\Users\Hoa\workspace\Proj_02\Project_Headers\button.h 
+	C:\Users\Hoa\workspace\Proj_02\Project_Headers\MCF52259_sysinit.h 

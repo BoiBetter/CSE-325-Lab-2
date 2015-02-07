@@ -4,6 +4,7 @@
 "./Sources/led_c.obj"
 "./Sources/gpio_c.obj"
 "./Sources/exceptions_c.obj"
+"./Sources/dtim_c.obj"
 "./Sources/dp_switch_c.obj"
 "./Sources/console_io_cf_c.obj"
 "./Sources/button_c.obj"

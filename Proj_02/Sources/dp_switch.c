@@ -15,7 +15,8 @@
 // Tempe, AZ 85287-8809
 //**************************************************************************************************************
 
-#include "common.h"
+#include "dp_switch.h"
+#include "support_common.h"
 
 //--------------------------------------------------------------------------------------------------------------
 // FUNCTION: dp_switch_init()
@@ -24,10 +25,11 @@
 // Call gpio_init() to initialize certain dip switch input.
 //
 // Input:
-// dp_switch can be DP_SWITCHx in which x can be replaced with 1, 2, 3, or 4.
+// dp_switch can be 1, 2, 3, 4.
 //--------------------------------------------------------------------------------------------------------------
 void dp_switch_init(int dp_switch){
-    gpio_init(PORT_DD, dp_switch, FUNCT_GPIO, LOW);
+    MCF_GPIO_PDDPAR &= ~(1<<(dp_switch+3));
+    MCF_GPIO_DDRDD &= ~(1<<dp_switch+3);
 }
 
 //--------------------------------------------------------------------------------------------------------------
@@ -37,8 +39,8 @@ void dp_switch_init(int dp_switch){
 // Call gpio_get_pin_state() to return status of a pin from port DD.
 //
 // Input:
-// dp_switch can be DP_SWITCHx in which x can be replaced with 1, 2, 3, or 4.
+// dp_switch can be 0, 1, 2, 3
 //--------------------------------------------------------------------------------------------------------------
 int get_dp_switch_state(int dp_switch){
-    return !gpio_get_pin_state(PORT_DD, dp_switch);
+    return !((MCF_GPIO_SETDD & (1<<(dp_switch+3)))>>(dp_switch+3));
 }

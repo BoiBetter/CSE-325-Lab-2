@@ -26,7 +26,7 @@
 // Call gpio_init() to initialize certain push button.
 //
 // Input:
-// button can be BUTTONx in which x can be replaced with 1 or 3.
+// button can be 0 or 1 which are button 1 and button 3.
 //--------------------------------------------------------------------------------------------------------------
 void button_init(int button);
 
@@ -37,7 +37,7 @@ void button_init(int button);
 // Call gpio_get_pin_state() to return status of a pin from port TA.
 //
 // Input:
-// button can be BUTTONx in which x can be replaced with 1 or 3.
+// button can be 0 or 1 which are button 1 and button 3.
 //--------------------------------------------------------------------------------------------------------------
 int get_button_state(int button);
 

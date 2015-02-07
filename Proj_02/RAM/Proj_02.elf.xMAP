@@ -24,25 +24,22 @@
   20000974 0000005C .text   __copy_rom_sections_to_ram	(startcf_c.obj)
   200009D0 0000022A .text   clear_mem	(startcf_c.obj)
   20000BFA 00000096 .text   _startup	(startcf_c.obj)
-  20000C90 00000032 .text   main	(main_c.obj)
-  20000CC2 0000001E .text   led_init	(led_c.obj)
-  20000CE0 0000001A .text   led_off	(led_c.obj)
-  20000CFA 0000001A .text   led_on	(led_c.obj)
-  20000D14 00000138 .text   gpio_init	(gpio_c.obj)
-  20000E4C 00000032 .text   gpio_get_pin_state	(gpio_c.obj)
-  20000E7E 0000006E .text   gpio_set_pin_state	(gpio_c.obj)
-  20000EEC 00000200 .text   mcf_exception_handler	(exceptions_c.obj)
-  200010EC 00000020 .text   asm_exception_handler	(exceptions_c.obj)
-  2000110C 00000008 .text   mcf5xxx_wr_vbr	(exceptions_c.obj)
-  20001114 00000062 .text   initialize_exceptions	(exceptions_c.obj)
-  20001176 0000001E .text   button_init	(button_c.obj)
-  20001194 00000026 .text   get_button_state	(button_c.obj)
-  200011BA 00000020 .text   pll_init	(MCF52259_sysinit_c.obj)
-  200011DA 00000022 .text   scm_init	(MCF52259_sysinit_c.obj)
-  200011FC 0000003E .text   __initialize_hardware	(MCF52259_sysinit_c.obj)
-  2000123A 0000001C .text   __call_static_initializers	(librt.a cf_staticinitia)
-#>20001258          ___ROM_AT (linker command file)
-#>20001258          ___DATA_ROM (linker command file)
+  20000C90 00000012 .text   main	(main_c.obj)
+  20000CA2 00000020 .text   led_all_init	(led_c.obj)
+  20000CC2 00000020 .text   led_all_on	(led_c.obj)
+  20000CE2 00000060 .text   led_init	(led_c.obj)
+  20000D42 00000030 .text   led_off	(led_c.obj)
+  20000D72 0000002E .text   led_on	(led_c.obj)
+  20000DA0 00000200 .text   mcf_exception_handler	(exceptions_c.obj)
+  20000FA0 00000020 .text   asm_exception_handler	(exceptions_c.obj)
+  20000FC0 00000008 .text   mcf5xxx_wr_vbr	(exceptions_c.obj)
+  20000FC8 00000062 .text   initialize_exceptions	(exceptions_c.obj)
+  2000102A 00000020 .text   pll_init	(MCF52259_sysinit_c.obj)
+  2000104A 00000022 .text   scm_init	(MCF52259_sysinit_c.obj)
+  2000106C 0000003E .text   __initialize_hardware	(MCF52259_sysinit_c.obj)
+  200010AA 0000001C .text   __call_static_initializers	(librt.a cf_staticinitia)
+#>200010C8          ___ROM_AT (linker command file)
+#>200010C8          ___DATA_ROM (linker command file)
 
 # .data
 #>20009100          ___DATA_RAM (linker command file)
@@ -78,10 +75,10 @@
 #>2000B104          __SP_INIT (linker command file)
 #>2000A104          ___mem_limit (linker command file)
 #>00000010          ___stack_safety (linker command file)
-#>2000125C          _romp_at (linker command file)
+#>200010CC          _romp_at (linker command file)
 
 # .romp
-#>2000125C          __S_romp (linker command file)
+#>200010CC          __S_romp (linker command file)
 
 
 # Memory map:
@@ -89,12 +86,12 @@
   20000000 20000000 00000000 .vectorram vectorram
   20000500 20000500 00000000 .code      code
   20000500 20000500 00000400 .vectors   code
-  20000900 20000900 00000958 .text      code
+  20000900 20000900 000007C8 .text      code
   20009100 20009100 00000000 .userram   userram
-  20009100 20001258 00000004 .data      userram
+  20009100 200010C8 00000004 .data      userram
   20009104 20009104 00000000 .bss       userram
   20009104 20009104 00000000 .custom    userram
-  20009104 2000125C 00000018 .romp      userram
+  20009104 200010CC 00000018 .romp      userram
 
-# Link start time: Wed Feb 04 23:11:04 2015
-# Link end time: Wed Feb 04 23:11:05 2015
+# Link start time: Fri Feb 06 16:09:58 2015
+# Link end time: Fri Feb 06 16:09:58 2015
