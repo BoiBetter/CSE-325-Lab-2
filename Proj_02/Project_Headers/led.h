@@ -48,7 +48,7 @@ void led_all_on();
 // Initialize certain LED.
 //
 // Input:
-// LEDx in which x can be replaced with 1,2,3, or 4.
+// led should be 0, 1, 2, 3
 //--------------------------------------------------------------------------------------------------------------
 void led_init(int led);
 
@@ -59,7 +59,7 @@ void led_init(int led);
 // Turn off certain LED.
 //
 // Input:
-// LEDx in which x can be replaced with 1,2,3, or 4.
+// led should be 0, 1, 2, 3
 //--------------------------------------------------------------------------------------------------------------
 void led_off(int led);
 
@@ -70,7 +70,7 @@ void led_off(int led);
 // Turn on certain LED.
 //
 // Input:
-// LEDx in which x can be replaced with 1,2,3, or 4.
+// led should be 0, 1, 2, 3
 //--------------------------------------------------------------------------------------------------------------
 void led_on(int led);
 

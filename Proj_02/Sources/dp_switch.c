@@ -39,7 +39,7 @@ void dp_switch_init(int dp_switch){
 // Call gpio_get_pin_state() to return status of a pin from port DD.
 //
 // Input:
-// dp_switch can be 0, 1, 2, 3
+// dp_switch can be 1, 2, 3, 4
 //--------------------------------------------------------------------------------------------------------------
 int get_dp_switch_state(int dp_switch){
     return !((MCF_GPIO_SETDD & (1<<(dp_switch+3)))>>(dp_switch+3));
